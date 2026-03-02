@@ -24,7 +24,7 @@ export default async function HomePage() {
   })
 
   // Fetch site settings
-  const siteSettings = await payload.findGlobal({
+  const _siteSettings = await payload.findGlobal({
     slug: 'site-settings',
   })
 

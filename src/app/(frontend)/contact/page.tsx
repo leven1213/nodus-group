@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+//import Image from 'next/image'
 import { useState } from 'react'
 import styles from './page.module.css'
 
@@ -15,9 +15,7 @@ export default function ContactPage() {
     message: '',
   })
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
@@ -141,14 +139,10 @@ export default function ContactPage() {
 
             <div className={styles.submitRow}>
               {status === 'success' && (
-                <p className={styles.successMsg}>
-                  Thanks! We&apos;ll be in touch soon.
-                </p>
+                <p className={styles.successMsg}>Thanks! We&apos;ll be in touch soon.</p>
               )}
               {status === 'error' && (
-                <p className={styles.errorMsg}>
-                  Something went wrong. Please try again.
-                </p>
+                <p className={styles.errorMsg}>Something went wrong. Please try again.</p>
               )}
               <button
                 className={styles.submitBtn}

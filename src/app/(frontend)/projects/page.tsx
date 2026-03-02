@@ -21,8 +21,7 @@ export default async function ProjectsPage() {
         {projects.length > 0 ? (
           <div className={styles.grid}>
             {projects.map((project) => {
-              const image =
-                typeof project.coverImage === 'object' ? project.coverImage : null
+              const image = typeof project.coverImage === 'object' ? project.coverImage : null
 
               return (
                 <Link
@@ -53,8 +52,9 @@ export default async function ProjectsPage() {
           </div>
         ) : (
           <div className={styles.empty}>
-            <p>No projects yet. Add your first project in the{' '}
-              <a href="/admin/collections/projects">Payload admin panel</a>.
+            <p>
+              No projects yet. Add your first project in the{' '}
+              <Link href="/admin/collections/projects">Payload admin panel</Link>.
             </p>
           </div>
         )}
