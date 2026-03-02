@@ -1,34 +1,79 @@
+import { buildConfig } from 'payload'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { s3Storage } from '@payloadcms/storage-s3'
 import path from 'path'
-import { buildConfig } from 'payload'
-import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
-import { Users } from './collections/Users'
+import { Pages } from './collections/Pages'
+import { Projects } from './collections/Projects'
 import { Media } from './collections/Media'
-
-const filename = fileURLToPath(import.meta.url)
-const dirname = path.dirname(filename)
+import { ContactSubmissions } from './collections/ContactSubmissions'
+import { Globals } from './globals/SiteSettings'
 
 export default buildConfig({
+  sharp,
   admin: {
-    user: Users.slug,
-    importMap: {
-      baseDir: path.resolve(dirname),
+    user: 'users',
+    meta: {
+      titleSuffix: '— Nodus Admin',
     },
   },
-  collections: [Users, Media],
-  editor: lexicalEditor(),
+
+  collections: [
+    Pages,
+    Projects,
+    Media,
+    ContactSubmissions,
+    {
+      slug: 'users',
+      auth: true,
+      admin: { useAsTitle: 'email' },
+      fields: [{ name: 'name', type: 'text', required: true }],
+    },
+  ],
+
+  globals: [Globals],
+
+  editor: lexicalEditor({}),
+
   secret: process.env.PAYLOAD_SECRET || '',
+
   typescript: {
-    outputFile: path.resolve(dirname, 'payload-types.ts'),
+    outputFile: path.resolve('./src/payload-types.ts'),
   },
+
+  // PostgreSQL via Supabase
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URL || '',
+      connectionString: process.env.DATABASE_URI,
     },
   }),
-  sharp,
-  plugins: [],
+
+  // Images stored in Supabase Storage (S3-compatible)
+  plugins: [
+    s3Storage({
+      collections: {
+        media: {
+          prefix: 'media',
+        },
+      },
+      bucket: process.env.SUPABASE_STORAGE_BUCKET || 'media',
+      config: {
+        endpoint: `${process.env.SUPABASE_URL}/storage/v1/s3`,
+        credentials: {
+          accessKeyId: 'supabase',
+          secretAccessKey: process.env.SUPABASE_SERVICE_ROLE_KEY || '',
+        },
+        region: 'ap-southeast-2',
+        forcePathStyle: true,
+      },
+    }),
+  ],
+
+  upload: {
+    limits: {
+      fileSize: 10_000_000, // 10MB max upload
+    },
+  },
 })
