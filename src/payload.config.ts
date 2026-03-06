@@ -62,8 +62,8 @@ export default buildConfig({
       config: {
         endpoint: `${process.env.SUPABASE_URL}/storage/v1/s3`,
         credentials: {
-          accessKeyId: 'supabase',
-          secretAccessKey: process.env.SUPABASE_SERVICE_ROLE_KEY || '',
+          accessKeyId: process.env.SUPABASE_S3_ACCESS_KEY_ID || '',
+          secretAccessKey: process.env.SUPABASE_S3_SECRET_ACCESS_KEY || '',
         },
         region: 'ap-southeast-2',
         forcePathStyle: true,
