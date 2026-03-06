@@ -55,7 +55,7 @@ export default buildConfig({
     s3Storage({
       collections: {
         media: {
-          prefix: 'media',
+          prefix: 'images',
         },
       },
       bucket: process.env.SUPABASE_STORAGE_BUCKET || 'media',
