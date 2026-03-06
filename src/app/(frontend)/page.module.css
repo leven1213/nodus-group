@@ -15,9 +15,15 @@
   padding-bottom: clamp(2rem, 4vw, 4rem);
 }
 
+/* Hero override — only the homepage hero gets the big size */
 .heroHeadline {
   grid-column: 1 / 21;
+  padding-top: var(--line-height-heading);
+  font-size: var(--font-size-hero);
+  font-weight: 200;
+  letter-spacing: -0.04em;
   line-height: var(--line-height-hero);
+  word-spacing: 1.4rem;
 }
 
 .heroParagraph {
@@ -35,7 +41,7 @@
 
 /* ── About ── */
 .about {
-  grid-template-rows: auto;
+  grid-template-rows: 1fr auto;
 }
 
 .aboutInner {
@@ -47,49 +53,42 @@
   padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
-.aboutLeft {
-  grid-column: 1 / 13;
-  display: flex;
-  flex-direction: column;
-}
-
 .aboutHeadline {
+  grid-column: 1 / 12;
   color: var(--color-black);
 }
 
-.aboutRight {
-  display: grid;
-  grid-column: 14 / 25;
-  grid-template-columns: repeat(11, 1fr);
-  gap: var(--gap);
-  align-content: start;
-}
-
 .aboutImageWrap {
-  grid-column: 1 / 9;
-  position: relative;
+  grid-column: 14 / 22;
   aspect-ratio: 4 / 3;
-  overflow: hidden;
   background: var(--color-light-gray);
 }
 
 .aboutParagraph {
-  grid-column: 1 / 8;
+  grid-column: 14 / 22; 
+  position: relative;
   color: var(--color-text-muted);
 }
 
-.btnAbsolute {
-  /* positioning — unique to this button */
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 1;
-  display: grid;
-  grid-column: 10 / 12;
-  grid-template-columns: repeat(11, 1fr);
-  gap: var(--gap);
-  align-content: start;
-}
+.aboutBtnWrap {
+  grid-column: 23 / -1;
+  grid-row: 1;
+  justify-self: end;
+} 
+
+
+/* @media (max-width: 1024px) {
+  .aboutInner {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutHeadline,
+  .aboutImageWrap,
+  .aboutParagraph,
+  .aboutInner .btn {
+    grid-column: 1 / -1;
+  }
+} */
 
 /* ── Featured Projects ── */
 .projects {

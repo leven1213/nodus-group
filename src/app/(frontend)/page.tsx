@@ -48,36 +48,33 @@ export default async function HomePage() {
       {/* ── About intro ── */}
       <section className={`grid ${styles.about}`}>
         <div className={styles.aboutInner}>
-          <div className={styles.aboutLeft}>
-            <h2 className={styles.aboutHeadline}>
-              {page?.secondaryHeadline ||
-                'Born from years of building, Nodus brings the same care and precision to every workplace.'}
-            </h2>
-          </div>
+          <h2 className={styles.aboutHeadline}>
+            {page?.secondaryHeadline ||
+              'Born from years of building, Nodus brings the same care and precision to every workplace.'}
+          </h2>
 
-          <div className={styles.aboutRight}>
+          <div className={styles.aboutImageWrap}>
             {page?.secondaryImage &&
             typeof page.secondaryImage === 'object' &&
             page.secondaryImage.url ? (
-              <div className={styles.aboutImageWrap}>
-                <Image
-                  src={page.secondaryImage.url}
-                  alt={page.secondaryImage.alt || 'Nodus interior'}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  priority
-                />
-              </div>
+              <Image
+                src={page.secondaryImage.url}
+                alt={page.secondaryImage.alt || 'Nodus interior'}
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
             ) : (
-              <div className={styles.aboutImageWrap}>
-                <div className={styles.imagePlaceholder} />
-              </div>
+              <div className={styles.imagePlaceholder} />
             )}
-            <p className={styles.aboutParagraph}>
-              {page?.secondaryParagraph ||
-                'Nodus specialises in office fitouts and commercial interiors designed to enhance performance, foster collaboration, and create workplaces your team is proud to call their own.'}
-            </p>
+          </div>
 
+          <p className={styles.aboutParagraph}>
+            {page?.secondaryParagraph ||
+              'Nodus specialises in office fitouts and commercial interiors designed to enhance performance, foster collaboration, and create workplaces your team is proud to call their own.'}
+          </p>
+
+          <div className={styles.aboutBtnWrap}>
             <Link href="/about" className="btn">
               Our Story
             </Link>
