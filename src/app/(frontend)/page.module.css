@@ -18,7 +18,7 @@
 /* Hero override — only the homepage hero gets the big size */
 .heroHeadline {
   grid-column: 1 / 21;
-  padding-top: var(--line-height-heading);
+  padding-top: 3rem;
   font-size: var(--font-size-hero);
   font-weight: 200;
   letter-spacing: -0.04em;
@@ -59,13 +59,16 @@
 }
 
 .aboutImageWrap {
-  grid-column: 14 / 22;
+  grid-column: 14 / 22; 
   aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
   background: var(--color-light-gray);
+  padding: 0;
 }
 
 .aboutParagraph {
-  grid-column: 14 / 22; 
+  grid-column: 14 / 22;  
   position: relative;
   color: var(--color-text-muted);
 }

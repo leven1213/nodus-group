@@ -11,6 +11,14 @@ import { Media } from './collections/Media'
 import { ContactSubmissions } from './collections/ContactSubmissions'
 import { Globals } from './globals/SiteSettings'
 
+// Temporary debug — add before buildConfig
+console.log('S3 CONFIG CHECK:', {
+  accessKeyId: process.env.SUPABASE_S3_ACCESS_KEY_ID?.slice(0, 8),
+  secretKey: process.env.SUPABASE_S3_SECRET_ACCESS_KEY?.slice(0, 8),
+  bucket: process.env.SUPABASE_STORAGE_BUCKET,
+  endpoint: process.env.SUPABASE_URL,
+})
+
 export default buildConfig({
   sharp,
   admin: {
@@ -54,7 +62,10 @@ export default buildConfig({
   plugins: [
     s3Storage({
       collections: {
-        media: {},
+        media: {
+          disableLocalStorage: true,
+          disablePayloadAccessControl: true,
+        },
       },
       bucket: process.env.SUPABASE_STORAGE_BUCKET || 'media',
       config: {
