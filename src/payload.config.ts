@@ -65,6 +65,8 @@ export default buildConfig({
         media: {
           disableLocalStorage: true,
           disablePayloadAccessControl: true,
+          generateFileURL: ({ filename }) =>
+            `${process.env.SUPABASE_URL}/storage/v1/object/public/${process.env.SUPABASE_STORAGE_BUCKET}/${filename}`,
         },
       },
       bucket: process.env.SUPABASE_STORAGE_BUCKET || 'media',
