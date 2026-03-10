@@ -15,10 +15,8 @@
   padding-bottom: clamp(2rem, 4vw, 4rem);
 }
 
-/* Hero override — only the homepage hero gets the big size */
 .heroHeadline {
   grid-column: 1 / 21;
-  padding-top: 3rem;
   font-size: var(--font-size-hero);
   font-weight: 200;
   letter-spacing: -0.04em;
@@ -27,9 +25,9 @@
 }
 
 .heroParagraph {
-  color: var(--color-text-muted);
   grid-column: 14 / 21;
   align-self: end;
+  color: var(--color-text-muted);
 }
 
 .divider {
@@ -41,7 +39,7 @@
 
 /* ── About ── */
 .about {
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto;
 }
 
 .aboutInner {
@@ -50,26 +48,29 @@
   grid-template-columns: repeat(24, 1fr);
   gap: var(--gap);
   align-items: start;
+  padding-top: clamp(3rem, 6vw, 5rem);
   padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
 .aboutHeadline {
   grid-column: 1 / 12;
+  grid-row: 1 / 3;
   color: var(--color-black);
 }
 
 .aboutImageWrap {
-  grid-column: 14 / 22; 
-  aspect-ratio: 4 / 3;
+  grid-column: 14 / 22;
+  grid-row: 1;
   position: relative;
   overflow: hidden;
+  aspect-ratio: 4 / 3;
   background: var(--color-light-gray);
-  padding: 0;
 }
 
 .aboutParagraph {
-  grid-column: 14 / 22;  
-  position: relative;
+  grid-column: 14 / 22;
+  grid-row: 2;
+  padding-top: 1.5rem;
   color: var(--color-text-muted);
 }
 
@@ -77,27 +78,13 @@
   grid-column: 23 / -1;
   grid-row: 1;
   justify-self: end;
-} 
-
-
-/* @media (max-width: 1024px) {
-  .aboutInner {
-    grid-template-columns: 1fr;
-  }
-
-  .aboutHeadline,
-  .aboutImageWrap,
-  .aboutParagraph,
-  .aboutInner .btn {
-    grid-column: 1 / -1;
-  }
-} */
+}
 
 /* ── Featured Projects ── */
 .projects {
   max-width: 1512px;
   margin: 0 auto;
-  padding: clamp(3rem, 6vw, 5rem) clamp(24px, 4vw, 80px);
+  padding: clamp(3rem, 6vw, 5rem) var(--gutter);
 }
 
 .projectsHeader {
@@ -152,7 +139,7 @@
 .imagePlaceholder {
   width: 100%;
   height: 100%;
-  background: #e8e6e2;
+  background: var(--color-light-gray);
 }
 
 .projectNav {
@@ -161,31 +148,74 @@
   padding-top: 1.5rem;
 }
 
-/* ── Responsive ── */
+/* ── Tablet ── */
 @media (max-width: 1024px) {
-  .heroInner {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .heroHeadline {
+    grid-column: 1 / -1;
   }
 
   .heroParagraph {
-    max-width: 100%;
-    grid-column: 1;
+    grid-column: 1 / -1;
+    max-width: 48ch;
   }
 
   .aboutInner {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .aboutHeadline {
+    grid-column: 1 / -1;
+    grid-row: auto; 
+    font-size: clamp(0.6rem, 12vw, 2rem);
+    word-spacing: 0.2rem;
+  }  
+
+  .aboutImageWrap {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .aboutParagraph {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding-top: 0;
+  }
+
+  .aboutBtnWrap {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    justify-self: start;
   }
 
   .featuredProject {
     grid-template-columns: 1fr;
   }
+
+  .featuredImageWrap {
+    order: -1;
+  }
 }
 
+/* ── Mobile ── */
 @media (max-width: 640px) {
+  .heroHeadline {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    word-spacing: 0.5rem;
+  }
+
+  .heroParagraph {
+    max-width: 100%;
+  }
+
   .projectsHeader {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
   }
+
+  .aboutHeadline {
+    font-size: clamp(0.4rem, 12vw, 1.8rem);
+    word-spacing: 0.2rem;
+  }  
 }
