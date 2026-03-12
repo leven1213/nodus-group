@@ -207,19 +207,26 @@
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .logo {
-    grid-column: 1 / 8;
+    grid-column: 1 / 7;
   }
+
   .nav {
-    grid-column: 9 / 13;
+    grid-column: 7 / 13;
+    gap: 1rem;
   }
 }
 
 @media (max-width: 768px) {
+  .logo {
+    grid-column: 1 / 8;
+  }
+  
+  .nav {
+    grid-column: 8 / 13;
+    gap: 0.75rem;
+  }
+  
   .navLink {
     display: none;
-  }
-  .nav {
-    grid-column: 10 / 13;
-    gap: 1rem;
   }
 }

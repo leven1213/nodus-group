@@ -39,6 +39,12 @@ export const Pages: CollectionConfig = {
       },
     },
     {
+      name: 'heroImage',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Hero Background Image',
+    },
+    {
       name: 'secondaryHeadline',
       type: 'text',
       label: 'Secondary Headline',

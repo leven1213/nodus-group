@@ -16,29 +16,54 @@
   --color-text: #1a1814;
   --color-text-muted: #6b6862;
 
-  --font-display: 'Plus Jakarta Sans', -apple-system, 'Helvetica Neue', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
   --font-body: -apple-system, 'Helvetica Neue', sans-serif;
 
-  /* ── Typography Scale ── */
-  --font-size-hero: clamp(6rem, 8vw, 8rem); /* Homepage hero only */
-  --font-size-heading: clamp(3.75rem, 3vw, 4rem); /* Section + page headings */
-  --font-size-body: 0.875rem;
+  /* ── Typography Scale — mobile first ── */
+  --font-size-hero: clamp(2.5rem, 11vw, 8rem);
+  --font-size-heading: clamp(1.75rem, 6vw, 4rem);
+  --font-size-body: 0.95rem;
   --font-size-small: 0.75rem;
   --font-size-meta: 0.65rem;
-  --line-height-hero: 1;
-  --line-height-heading: 1.3;
-  --line-height-body: 1.6;
-  --heading-font-weight: 300;
-  --heading-letter-spacing: -0.02em;
-  --heading-word-spacing: 0.3rem;
 
+  --line-height-hero: 1.05;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+
+  --heading-letter-spacing: -0.02em;
+  --heading-word-spacing: 0.2rem;
+
+  /* ── Layout ── */
   --max-width: 1512px;
-  --nav-height: calc(56px + 48px);
+  --nav-height: 64px;
   --columns: 4;
   --gap: 16px;
   --gutter: 16px;
 }
 
+/* ── Tablet ── */
+@media (min-width: 650px) {
+  :root {
+    --columns: 12;
+    --gutter: 24px;
+    --nav-height: 72px;
+    --heading-word-spacing: 0.3rem;
+  }
+}
+
+/* ── Desktop ── */
+@media (min-width: 1024px) {
+  :root {
+    --columns: 24;
+    --gutter: 24px;
+    --nav-height: calc(56px + 48px);
+    --font-size-hero: clamp(5rem, 8vw, 8rem);
+    --font-size-heading: clamp(2rem, 3vw, 4rem);
+    --heading-word-spacing: 0.4rem;
+  }
+}
+
+/* ── Reset ── */
 *,
 *::before,
 *::after {
@@ -55,7 +80,7 @@ body {
   position: relative;
   font-family: var(--font-body);
   color: var(--color-text);
-  background: var(--color-white); 
+  background: var(--color-white);
 }
 
 img {
@@ -68,10 +93,49 @@ a {
   text-decoration: none;
 }
 
+/* ── Typography ── */
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-heading);
+  font-weight: 300;
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--heading-letter-spacing);
+  word-spacing: var(--heading-word-spacing);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-heading);
+  font-weight: 300;
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--heading-letter-spacing);
+  word-spacing: var(--heading-word-spacing);
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+p {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-muted);
+}
+
+/* ── Buttons ── */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
 a.btn {
   display: inline-flex;
   align-items: center;
-  /* justify-self: start; */
   width: fit-content;
   font-family: var(--font-body);
   font-size: var(--font-size-meta);
@@ -85,72 +149,62 @@ a.btn {
   background: transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-button:hover,
-a.btn:hover {
+a.btn:hover,
+button:hover {
   background: var(--color-black);
   color: var(--color-white);
 }
 
-/* Base h1 — used for page titles on About, Projects, Contact */
-h1 {
-  font-family: var(--font-display);
-  font-size: var(--font-size-heading); 
-  font-weight: var(--heading-font-weight);
-  line-height: var(--line-height-heading);
-  letter-spacing: var(--heading-letter-spacing); 
-  word-spacing: var(--heading-word-spacing); 
+a.btn-ghost {
+  border-color: rgba(255, 255, 255, 0.8);
+  color: var(--color-white);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
 }
 
-h2 {
-  font-family: var(--font-display);
-  font-size: var(--font-size-heading);
-  font-weight: var(--heading-font-weight);
-  line-height: var(--line-height-heading);
-  letter-spacing: var(--heading-letter-spacing);
-  word-spacing: var(--heading-word-spacing); 
+a.btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-white);
 }
 
-p {
-  line-height: var(--line-height-body);
-}
-
-@media (min-width: 650px) {
-  :root {
-    --columns: 12;
-    --gap: 16px;
-    --gutter: 24px;
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --columns: 24;
-    --gap: 16px;
-    --gutter: 24px;
-  }
-}
-
+/* ── Grid ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
   gap: var(--gap);
   padding: 24px var(--gutter);
-  max-width: 1512px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
-/* Mobile — everything full width by default */
+/* ── Footer columns — mobile first ── */
 .logoCol,
 .sitemap,
 .socials,
 .contact {
-  grid-column: 1 / -1; /* full width */
+  grid-column: 1 / -1;
 }
 
-/* Desktop — apply the column positions */
+@media (min-width: 650px) {
+  .logoCol {
+    grid-column: 1 / 7;
+  }
+  .sitemap {
+    grid-column: 7 / 10;
+  }
+  .socials {
+    grid-column: 10 / 12;
+  }
+  .contact {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (min-width: 1024px) {
   .logoCol {
     grid-column: 1 / 7;

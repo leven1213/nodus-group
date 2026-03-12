@@ -26,9 +26,9 @@ export default function Nav() {
 
   return (
     <>
-      <header className={styles.header}>
+      <header data-reveal className={styles.header}>
         <div className={`grid ${styles.inner}`}>
-          <Link href="/" className={styles.logo}>
+          <Link data-reveal href="/" className={styles.logo}>
             <Image
               src="/logos/Nodus_Logo_Type_Black.svg"
               alt="Nodus Group"
@@ -40,22 +40,28 @@ export default function Nav() {
 
           <nav className={styles.nav}>
             <Link
+              data-reveal
+              data-reveal-delay="100"
               href="/projects"
               className={`${styles.navLink} ${pathname === '/projects' ? styles.active : ''}`}
             >
               Projects
             </Link>
             <Link
+              data-reveal
+              data-reveal-delay="150"
               href="/about"
               className={`${styles.navLink} ${pathname === '/about' ? styles.active : ''}`}
             >
               About Us
             </Link>
-            <Link href="/contact" className="btn">
+            <Link href="/contact" data-reveal data-reveal-delay="200" className="btn">
               Get in Touch
             </Link>
 
             <button
+              data-reveal
+              data-reveal-delay="250"
               className={`${styles.hamburger} ${mounted && menuOpen ? styles.hamburgerOpen : ''}`}
               onClick={() => mounted && setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"

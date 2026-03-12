@@ -137,6 +137,7 @@ export interface Page {
    */
   heroHeadline?: string | null;
   heroParagraph?: string | null;
+  heroImage?: (number | null) | Media;
   secondaryHeadline?: string | null;
   secondaryImage?: (number | null) | Media;
   secondaryParagraph?: string | null;
@@ -398,6 +399,7 @@ export interface PagesSelect<T extends boolean = true> {
   slug?: T;
   heroHeadline?: T;
   heroParagraph?: T;
+  heroImage?: T;
   secondaryHeadline?: T;
   secondaryImage?: T;
   secondaryParagraph?: T;
