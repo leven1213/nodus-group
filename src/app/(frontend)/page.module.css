@@ -43,8 +43,7 @@
   background-size: cover;
   background-position: center;
   z-index: 0;
-  pointer-events: none; 
-  filter: invert(1) sepia(0.2) saturate(0.3) brightness(1.1) contrast(1.2);
+  pointer-events: none;  
 }
 
 /* Tablet */
