@@ -24,9 +24,19 @@ export default function Nav() {
     }
   }, [menuOpen])
 
+  const [borderVisible, setBorderVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setBorderVisible(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <>
-      <header data-reveal className={styles.header}>
+      <header
+        data-header
+        className={`${styles.header} ${borderVisible ? styles.headerVisible : ''}`}
+      >
         <div className={`grid ${styles.inner}`}>
           <Link data-reveal href="/" className={styles.logo}>
             <Image
@@ -49,7 +59,7 @@ export default function Nav() {
             </Link>
             <Link
               data-reveal
-              data-reveal-delay="150"
+              data-reveal-delay="200"
               href="/about"
               className={`${styles.navLink} ${pathname === '/about' ? styles.active : ''}`}
             >

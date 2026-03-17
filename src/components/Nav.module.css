@@ -5,7 +5,23 @@
   right: 0;
   z-index: 100;
   background: var(--color-white);
-  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: var(--color-light-gray);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.headerVisible::after {
+  transform: scaleX(1);
 }
 
 .inner {
@@ -17,13 +33,19 @@
   grid-row: 1;
   display: flex;
   align-items: center;
+  text-decoration: none !important;
+}
+
+a.logo:hover {
+  background-image: none;
+  animation: none;
 }
 
 .nav {
   grid-column: 1 / 25;
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: clamp(1.5rem, 9vw, 7.5rem);
   grid-row: 1;
   justify-self: end;
 }
@@ -81,14 +103,14 @@
 
 /* Open state — morphs to X */
 .hamburgerOpen .lineTop {
-  transform: translateY(5px) rotate(45deg);
+  transform: translateX(-3.4) translateY(4.2px) rotate(45deg);
 }
 .hamburgerOpen .lineMid {
   opacity: 0;
   transform: scaleX(0);
 }
 .hamburgerOpen .lineBot {
-  transform: translateY(-3px) rotate(-45deg);
+  transform: translateX(-3.4) translateY(-3px) rotate(-45deg);
 }
 
 /* ── Overlay ── */
@@ -211,8 +233,7 @@
   }
 
   .nav {
-    grid-column: 7 / 13;
-    gap: 1rem;
+    grid-column: 1 / 25;
   }
 }
 
@@ -220,12 +241,11 @@
   .logo {
     grid-column: 1 / 8;
   }
-  
+
   .nav {
-    grid-column: 8 / 13;
-    gap: 0.75rem;
+    grid-column: 8 / 13; 
   }
-  
+
   .navLink {
     display: none;
   }

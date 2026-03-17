@@ -49,17 +49,17 @@ export default async function HomePage() {
       >
         <div data-hero-image className={styles.heroImage} />
         <div className={styles.heroContent}>
-          <h1 data-entrance className={styles.heroHeadline}>
+          <h1 data-entrance-headline className={styles.heroHeadline}>
             {page?.heroHeadline || 'Spaces built around how you work.'}
           </h1>
-          <p data-entrance className={styles.heroParagraph}>
+          <p data-entrance-para className={styles.heroParagraph}>
             {page?.heroParagraph ||
               'Every office tells a story about the business inside it. Nodus Group designs and delivers fitouts built to perform from day one, and built to last.'}
           </p>
         </div>
       </section>
 
-      <div className={styles.divider} />
+      <div className="divider" />
 
       {/* ── About intro ── */}
       <section className={`grid ${styles.about}`}>
@@ -86,12 +86,12 @@ export default async function HomePage() {
             )}
           </div>
 
-          <p data-reveal data-reveal-delay="150" className={styles.aboutParagraph}>
+          <p data-reveal className={styles.aboutParagraph}>
             {page?.secondaryParagraph ||
               'Nodus specialises in office fitouts and commercial interiors designed to enhance performance, foster collaboration, and create workplaces your team is proud to call their own.'}
           </p>
 
-          <div data-reveal data-reveal-delay="200" className={styles.aboutBtnWrap}>
+          <div data-reveal data-reveal-delay="250" className={styles.btnWrap}>
             <Link href="/about" className="btn">
               Our Story
             </Link>
@@ -99,19 +99,23 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <div className={styles.divider} />
-
       {/* ── Featured Projects ── */}
-      <section className={styles.projects}>
-        <div className={styles.projectsHeader}>
-          <h2 data-reveal className={styles.projectsTitle}>
-            Featured Projects
-          </h2>
-          <Link data-reveal data-reveal-delay="100" href="/projects" className="btn">
-            View All Projects
+      <div className="divider" />
+
+      <div className={`grid ${styles.projectsHeader}`}>
+        <h2 data-reveal className={styles.projectsTitle}>
+          Featured Projects
+        </h2>
+        <div data-reveal data-reveal-delay="250" className={styles.btnWrap}>
+          <Link data-reveal data-reveal-delay="250" href="/projects" className="btn">
+            View Projects
           </Link>
         </div>
+      </div>
 
+      <div className="divider" />
+
+      <section className={`grid ${styles.projects}`}>
         {projects.length > 0 ? (
           projects.map((project, i) => {
             const image = typeof project.coverImage === 'object' ? project.coverImage : null
@@ -161,12 +165,6 @@ export default async function HomePage() {
             </div>
           </div>
         )}
-
-        <div className={styles.projectNav}>
-          <Link href="/projects" className="btn">
-            View All Projects →
-          </Link>
-        </div>
       </section>
     </>
   )

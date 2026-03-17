@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('/fonts/PlusJakartaSans-Variable.woff2') format('woff2');
+  font-family: 'Sora';
+  src: url('/fonts/Manrope-Variable.woff2') format('woff2');
   font-weight: 100 500;
   font-style: normal;
   font-display: swap;
@@ -8,34 +8,29 @@
 
 :root {
   --color-black: #1a1814;
-  --color-dark: #1e1c17;
+  --color-dark: #1a1814;
   --color-white: #ffffff;
   --color-off-white: #f8f7f5;
-  --color-light-gray: #e8e6e2;
+  --color-light-gray: #d1d0d0;
   --color-mid-gray: #9a9690;
   --color-text: #1a1814;
-  --color-text-muted: #6b6862;
 
-  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Sora', sans-serif;
   --font-body: -apple-system, 'Helvetica Neue', sans-serif;
 
-  /* ── Typography Scale — mobile first ── */
-  --font-size-hero: clamp(2.5rem, 11vw, 8rem);
-  --font-size-heading: clamp(1.75rem, 6vw, 4rem);
-  --font-size-body: 0.95rem;
+  /* ── Typography Scale — mobile first ── */ 
+  --font-size-heading: clamp(1.85rem, 6vw, 4rem);
+  --font-size-body: 1rem;
   --font-size-small: 0.75rem;
   --font-size-meta: 0.65rem;
 
-  --line-height-hero: 1.05;
-  --line-height-heading: 1.2;
+  --line-height-hero: 1.15;
+  --line-height-heading: 1.35;
   --line-height-body: 1.6;
-
-  --heading-letter-spacing: -0.02em;
-  --heading-word-spacing: 0.2rem;
 
   /* ── Layout ── */
   --max-width: 1512px;
-  --nav-height: 64px;
+  --nav-height: 68px;
   --columns: 4;
   --gap: 16px;
   --gutter: 16px;
@@ -46,8 +41,7 @@
   :root {
     --columns: 12;
     --gutter: 24px;
-    --nav-height: 72px;
-    --heading-word-spacing: 0.3rem;
+    --nav-height: 72px; 
   }
 }
 
@@ -58,8 +52,7 @@
     --gutter: 24px;
     --nav-height: calc(56px + 48px);
     --font-size-hero: clamp(5rem, 8vw, 8rem);
-    --font-size-heading: clamp(2rem, 3vw, 4rem);
-    --heading-word-spacing: 0.4rem;
+    --font-size-heading: clamp(2rem, 3vw, 4rem); 
   }
 }
 
@@ -89,8 +82,41 @@ img {
 }
 
 a {
-  color: inherit;
+  padding-bottom: 3px;
   text-decoration: none;
+}
+
+a:hover {
+  background-image: linear-gradient(#1a1814, #1a1814);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  animation: underlineSweep 0.2s ease-out forwards;
+}
+
+@keyframes underlineSweep {
+  0% {
+    background-size: 0% 1px;
+    background-position: left bottom;
+  }
+  100% {
+    background-size: 100% 1px;
+    background-position: left bottom;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, var(--color-light-gray), var(--color-light-gray)) no-repeat
+    left center;
+  background-size: 0% 1px;
+  max-width: 1512px;
+  margin: 0 auto;
+  transition: background-size 1s cubic-bezier(0.9, 1, 0.9, 1);
+}
+
+.divider.visible {
+  background-size: 100% 1px;
 }
 
 /* ── Typography ── */
@@ -99,30 +125,29 @@ h1 {
   font-size: var(--font-size-heading);
   font-weight: 300;
   line-height: var(--line-height-heading);
-  letter-spacing: var(--heading-letter-spacing);
-  word-spacing: var(--heading-word-spacing);
+  letter-spacing: var(--heading-letter-spacing); 
 }
 
 h2 {
   font-family: var(--font-display);
   font-size: var(--font-size-heading);
-  font-weight: 300;
+  font-weight: 400;
   line-height: var(--line-height-heading);
-  letter-spacing: var(--heading-letter-spacing);
-  word-spacing: var(--heading-word-spacing);
+  letter-spacing: var(--heading-letter-spacing); 
 }
 
 h3 {
   font-family: var(--font-display);
-  font-size: var(--font-size-body);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.01em;
+  word-spacing: 0.2rem;
 }
 
 p {
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 /* ── Buttons ── */
@@ -170,6 +195,10 @@ a.btn-ghost {
 a.btn-ghost:hover {
   background: rgba(0, 0, 0, 0.5);
   color: var(--color-white);
+}
+
+a.logo:hover {
+  text-decoration: none;
 }
 
 /* ── Grid ── */
