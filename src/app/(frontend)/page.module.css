@@ -145,7 +145,7 @@ ABOUT — mobile base
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-bottom: 7.5rem;
+  padding-bottom: clamp(3rem, 4vw, 7.5rem);
 }
 
 .aboutHeadline {
@@ -208,20 +208,31 @@ FEATURED PROJECTS — mobile base
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-bottom: 7.5rem;
 }
 
 .projectsHeader {
   color: var(--color-black);
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
 }
 
 .projectsTitle {
   font-size: var(--font-size-heading);
   word-spacing: var(--heading-word-spacing);
+  grid-column: 1 / 16;
+}
+
+.projectsHeader .btnWrap {
+  grid-column: 17 / -1;
+  grid-row: 1;
+  justify-content: flex-end;
+  align-self: end;
 }
 
 .featuredProject {
   color: var(--color-text-muted);
+  padding-top: clamp(2rem, 4vw, 3rem) 0;
+  padding-bottom: clamp(0rem, 4vw, 3rem) 0;
 }
 
 .featuredImageWrap {
@@ -233,7 +244,7 @@ FEATURED PROJECTS — mobile base
 }
 
 .featuredInfo {
-  gap: 0.5rem;
+  grid-column: 1 / 16;
 }
 
 .featuredLocation {
@@ -246,16 +257,11 @@ FEATURED PROJECTS — mobile base
 
 .featuredDesc {
   color: var(--color-text-muted);
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 /* Tablet */
-@media (min-width: 650px) {
-  .projectsHeader {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+@media (min-width: 650px) and (max-width: 1024px) {
 }
 
 /* Desktop */
@@ -275,7 +281,6 @@ FEATURED PROJECTS — mobile base
     grid-template-columns: repeat(24, 1fr);
     gap: 0;
     align-items: start;
-    padding-bottom: 7.5rem;
   }
 
   .featuredProject {
@@ -284,7 +289,6 @@ FEATURED PROJECTS — mobile base
     grid-template-columns: repeat(24, 1fr);
     gap: var(--gap);
     align-items: start;
-    padding: clamp(2rem, 4vw, 3rem) 0;
   }
 
   .featuredInfo {

@@ -1,7 +1,7 @@
 .footer {
   background: var(--color-dark);
   color: var(--color-white);
-  margin-top: 6rem;
+  margin-top: clamp(3rem, 6vw, 5rem);
 }
 
 .ctaBar {

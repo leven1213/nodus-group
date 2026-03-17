@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -16,7 +17,15 @@ export default function Footer() {
       <div className={styles.main}>
         <div className={styles.inner}>
           <div className={styles.logoCol}>
-            <span className={styles.logoText}>nodus</span>
+            <Link data-reveal href="/" className={styles.logo}>
+              <Image
+                src="/logos/Nodus_Logo_Mark_White.svg"
+                alt="Nodus Group Logo Mark White"
+                width={120}
+                height={32}
+                priority
+              />
+            </Link>
           </div>
 
           <div className={styles.col}>

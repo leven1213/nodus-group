@@ -8,6 +8,14 @@ import HeroCursorReveal from '@/components/HeroCursorReveal'
 
 export const dynamic = 'force-dynamic'
 
+function lexicalToText(content: any): string {
+  if (!content?.root?.children) return ''
+  return content.root.children
+    .map((node: any) => node.children?.map((child: any) => child.text || '').join('') || '')
+    .filter(Boolean)
+    .join(' ')
+}
+
 export default async function HomePage() {
   const payload = await getPayload({ config: await config })
 
@@ -104,7 +112,7 @@ export default async function HomePage() {
 
       <div className={`grid ${styles.projectsHeader}`}>
         <h2 data-reveal className={styles.projectsTitle}>
-          Featured Projects
+          Featured Project
         </h2>
         <div data-reveal data-reveal-delay="250" className={styles.btnWrap}>
           <Link data-reveal data-reveal-delay="250" href="/projects" className="btn">
@@ -130,11 +138,12 @@ export default async function HomePage() {
                   <h3 className={styles.featuredName}>{project.title}</h3>
                   <p className={styles.featuredLocation}>{project.location}</p>
                   <p className={styles.featuredDesc}>
-                    {typeof project.description === 'string'
-                      ? project.description
-                      : 'Nodus specialises in office fitouts and commercial interiors designed to enhance performance and foster collaboration.'}
+                    {project.description
+                      ? lexicalToText(project.description)
+                      : 'Nodus specialises in office fitouts and commercial interiors.'}
                   </p>
                 </div>
+
                 <div className={styles.featuredImageWrap}>
                   {image?.url ? (
                     <Image
