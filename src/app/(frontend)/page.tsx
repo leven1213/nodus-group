@@ -5,6 +5,7 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import HeroEntrance from '@/components/HeroEntrance'
 import HeroCursorReveal from '@/components/HeroCursorReveal'
+import ScrollButton from '@/components/ScrollButton'
 
 export const dynamic = 'force-dynamic'
 
@@ -56,28 +57,31 @@ export default async function HomePage() {
         }
       >
         <div data-hero-image className={styles.heroImage} />
-        <div className={styles.heroContent}>
+        <div data-section className={styles.heroContent}>
           <h1 data-entrance-headline className={styles.heroHeadline}>
             {page?.heroHeadline || 'Spaces built around how you work.'}
           </h1>
-          <p data-entrance-para className={styles.heroParagraph}>
+          <p className={styles.heroParagraph}>
             {page?.heroParagraph ||
               'Every office tells a story about the business inside it. Nodus Group designs and delivers fitouts built to perform from day one, and built to last.'}
           </p>
+        </div>
+        <div data-section className={styles.btnWrap}>
+          <ScrollButton />
         </div>
       </section>
 
       <div className="divider" />
 
       {/* ── About intro ── */}
-      <section className={`grid ${styles.about}`}>
+      <section data-section id="homeAbout" className={`grid ${styles.about}`}>
         <div className={styles.aboutInner}>
-          <h2 data-reveal className={styles.aboutHeadline}>
+          <h2 className={styles.aboutHeadline}>
             {page?.secondaryHeadline ||
               'Born from years of building, Nodus brings the same care and precision to every workplace.'}
           </h2>
 
-          <div data-reveal data-reveal-delay="100" className={styles.aboutImageWrap}>
+          <div className={styles.aboutImageWrap}>
             {page?.secondaryImage &&
             typeof page.secondaryImage === 'object' &&
             page.secondaryImage.url ? (
@@ -94,12 +98,12 @@ export default async function HomePage() {
             )}
           </div>
 
-          <p data-reveal className={styles.aboutParagraph}>
+          <p className={styles.aboutParagraph}>
             {page?.secondaryParagraph ||
               'Nodus specialises in office fitouts and commercial interiors designed to enhance performance, foster collaboration, and create workplaces your team is proud to call their own.'}
           </p>
 
-          <div data-reveal data-reveal-delay="250" className={styles.btnWrap}>
+          <div className={styles.btnWrap}>
             <Link href="/about" className="btn">
               Our Story
             </Link>
@@ -110,12 +114,10 @@ export default async function HomePage() {
       {/* ── Featured Projects ── */}
       <div className="divider" />
 
-      <div className={`grid ${styles.projectsHeader}`}>
-        <h2 data-reveal className={styles.projectsTitle}>
-          Featured Project
-        </h2>
-        <div data-reveal data-reveal-delay="250" className={styles.btnWrap}>
-          <Link data-reveal data-reveal-delay="250" href="/projects" className="btn">
+      <div data-section className={`grid ${styles.projectsHeader}`}>
+        <h2 className={styles.projectsTitle}>Featured Project</h2>
+        <div className={styles.btnWrap}>
+          <Link href="/projects" className="btn">
             View Projects
           </Link>
         </div>
@@ -123,20 +125,15 @@ export default async function HomePage() {
 
       <div className="divider" />
 
-      <section className={`grid ${styles.projects}`}>
+      <section data-section className={`grid ${styles.projects}`}>
         {projects.length > 0 ? (
           projects.map((project, i) => {
             const image = typeof project.coverImage === 'object' ? project.coverImage : null
             return (
-              <div
-                key={project.id}
-                data-reveal
-                data-reveal-delay={String(i * 80)}
-                className={styles.featuredProject}
-              >
+              <div key={project.id} className={styles.featuredProject}>
                 <div className={styles.featuredInfo}>
                   <h3 className={styles.featuredName}>{project.title}</h3>
-                  <p className={styles.featuredLocation}>{project.location}</p>
+                  <p className="projectLocation">{project.location}</p>
                   <p className={styles.featuredDesc}>
                     {project.description
                       ? lexicalToText(project.description)
@@ -163,7 +160,7 @@ export default async function HomePage() {
         ) : (
           <div className={styles.featuredProject}>
             <div className={styles.featuredInfo}>
-              <h3 className={styles.featuredName}>Co-Working Space</h3>
+              <h3>Co-Working Space</h3>
               <p className={styles.featuredLocation}>Collingwood</p>
               <p className={styles.featuredDesc}>
                 Add your first project in the Payload admin panel to see it here.

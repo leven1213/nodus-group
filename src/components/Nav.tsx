@@ -34,11 +34,11 @@ export default function Nav() {
   return (
     <>
       <header
-        data-header
+        data-section
         className={`${styles.header} ${borderVisible ? styles.headerVisible : ''}`}
       >
         <div className={`grid ${styles.inner}`}>
-          <Link data-reveal href="/" className={styles.logo}>
+          <Link href="/" className={styles.logo}>
             <Image
               src="/logos/Nodus_Logo_Type_Black.svg"
               alt="Nodus Group"
@@ -50,28 +50,24 @@ export default function Nav() {
 
           <nav className={styles.nav}>
             <Link
-              data-reveal
-              data-reveal-delay="100"
               href="/projects"
               className={`${styles.navLink} ${pathname === '/projects' ? styles.active : ''}`}
             >
               Projects
             </Link>
             <Link
-              data-reveal
-              data-reveal-delay="200"
               href="/about"
               className={`${styles.navLink} ${pathname === '/about' ? styles.active : ''}`}
             >
               About Us
             </Link>
-            <Link href="/contact" data-reveal data-reveal-delay="200" className="btn">
-              Get in Touch
-            </Link>
+            <div className={styles.btnWrap}>
+              <Link href="/contact" className="btn">
+                Get in Touch
+              </Link>
+            </div>
 
             <button
-              data-reveal
-              data-reveal-delay="250"
               className={`${styles.hamburger} ${mounted && menuOpen ? styles.hamburgerOpen : ''}`}
               onClick={() => mounted && setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"

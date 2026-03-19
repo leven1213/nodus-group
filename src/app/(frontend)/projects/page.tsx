@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
 
+import HeroEntrance from '@/components/HeroEntrance'
+
 export default async function ProjectsPage() {
   const payload = await getPayload({ config: await config })
 
@@ -14,12 +16,20 @@ export default async function ProjectsPage() {
   })
 
   return (
-    <div className={styles.page}>
-      <div className={styles.inner}>
-        <h1 className={styles.pageTitle}>Projects</h1>
+    <>
+      <HeroEntrance />
 
+      <div className="pageHeading">
+        <div data-section className={`grid ${styles.heroHeader}`}>
+          <h1 className="heroTitle">Projects</h1>
+        </div>
+      </div>
+
+      <div className="divider" />
+
+      <div data-section className="pageSection">
         {projects.length > 0 ? (
-          <div className={styles.grid}>
+          <div className={styles.galleryGrid}>
             {projects.map((project) => {
               const image = typeof project.coverImage === 'object' ? project.coverImage : null
 
@@ -27,6 +37,7 @@ export default async function ProjectsPage() {
                 <Link
                   key={project.id}
                   href={`/projects/${project.slug}`}
+                  data-reveal
                   className={styles.projectCard}
                 >
                   <div className={styles.imageWrap}>
@@ -44,7 +55,7 @@ export default async function ProjectsPage() {
                   </div>
                   <div className={styles.projectInfo}>
                     <h2 className={styles.projectTitle}>{project.title}</h2>
-                    <p className={styles.projectLocation}>{project.location}</p>
+                    <p className="projectLocation">{project.location}</p>
                   </div>
                 </Link>
               )
@@ -59,6 +70,6 @@ export default async function ProjectsPage() {
           </div>
         )}
       </div>
-    </div>
+    </>
   )
 }

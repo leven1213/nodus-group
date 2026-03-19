@@ -1,12 +1,10 @@
 .page {
   max-width: 1512px;
-  margin: 0 auto;
-  padding: clamp(3rem, 6vw, 5rem) clamp(24px, 4vw, 80px);
+  margin: 0 auto; 
 }
 
 .pageTitle {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 5rem); 
+  font-family: var(--font-display); 
   letter-spacing: -0.02em;
   line-height: 1.05;
   margin-bottom: 2rem;

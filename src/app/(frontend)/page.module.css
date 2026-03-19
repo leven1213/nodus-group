@@ -23,9 +23,8 @@ HERO — mobile base
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   min-height: 100svh;
-  padding-top: var(--nav-height);
+  justify-content: center; 
   position: relative;
   overflow: hidden;
 }
@@ -39,7 +38,7 @@ HERO — mobile base
 }
 
 .heroHeadline {
-  font-size: clamp(3.5rem, 9vw, 7em);
+  font-size: clamp(4rem, 9vw, 8em);
   font-weight: 400;
   line-height: 1.1;
   max-width: 40ch;
@@ -67,6 +66,15 @@ HERO — mobile base
   opacity: 0;
 }
 
+.hero .btnWrap {
+  grid-column: 17 / -1;
+  justify-content: flex-end;
+  align-self: end;
+  bottom: 0;
+  position: absolute;
+  padding: var(--gap);
+}
+
 /* Tablet */
 @media (min-width: 650px) and (max-width: 1024px) {
   .hero {
@@ -91,7 +99,7 @@ HERO — mobile base
 
   .heroParagraph {
     max-width: 50ch;
-  }
+  } 
 }
 
 /* Desktop */
@@ -102,8 +110,7 @@ HERO — mobile base
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: 1fr auto;
     gap: var(--gap);
-    padding: var(--gutter);
-    padding-top: var(--nav-height);
+    padding: var(--gutter); 
     align-content: center;
     overflow: hidden;
   }
@@ -133,6 +140,12 @@ HERO — mobile base
     max-width: unset;
     align-self: end;
   }
+
+  .hero .btnWrap {
+    position: relative;
+    grid-row: 2;
+    padding: 0;
+  }
 }
 
 /* 
@@ -140,17 +153,20 @@ HERO — mobile base
 ABOUT — mobile base 
 ====================================
 */
+.about {
+  scroll-margin-top: var(--nav-height);
+}
+
 .aboutInner {
   grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-bottom: clamp(3rem, 4vw, 7.5rem);
+  padding-bottom: clamp(3rem, 11vw, 10rem);
 }
 
 .aboutHeadline {
-  color: var(--color-black);
-  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  color: var(--color-black); 
 }
 
 .aboutImageWrap {
@@ -176,9 +192,7 @@ ABOUT — mobile base
 
   .aboutHeadline {
     grid-column: 1 / 12;
-    grid-row: 1 / 3;
-    font-size: var(--font-size-heading);
-    word-spacing: var(--heading-word-spacing);
+    grid-row: 1 / 3;  
   }
 
   .aboutImageWrap {
@@ -216,9 +230,7 @@ FEATURED PROJECTS — mobile base
   grid-template-columns: repeat(24, 1fr);
 }
 
-.projectsTitle {
-  font-size: var(--font-size-heading);
-  word-spacing: var(--heading-word-spacing);
+.projectsTitle {  
   grid-column: 1 / 16;
 }
 
@@ -292,7 +304,7 @@ FEATURED PROJECTS — mobile base
   }
 
   .featuredInfo {
-    grid-column: 1 / 12;
+    grid-column: 1 / 8;
   }
 
   .featuredImageWrap {

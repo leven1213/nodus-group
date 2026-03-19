@@ -1,27 +1,29 @@
 .page {
   max-width: 1512px;
   margin: 0 auto;
-  padding: clamp(3rem, 6vw, 5rem) clamp(24px, 4vw, 80px);
 }
 
-.pageTitle {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 5rem); 
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  margin-bottom: 1.5rem;
-}
-
-.grid {
+.heroHeader {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(24, 1fr);
+  gap: var(--gap);
+  align-items: start;
 }
+
+.heroHeader h1 {
+  grid-column: 1 / -1;
+}
+
+.heroTitle {
+  word-spacing: var(--heading-word-spacing);
+  grid-column: 1 / 16;
+} 
 
 .projectCard {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.5rem;
   cursor: pointer;
   padding-bottom: 2rem;
   text-decoration: none;
@@ -33,7 +35,7 @@
 
 .imageWrap {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--color-light-gray);
 }
@@ -49,21 +51,15 @@
 }
 
 .projectInfo {
-  padding: 0 2px;
-}
-
-.projectTitle {
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  text-decoration: none;
   color: var(--color-black);
 }
 
-.projectLocation {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  margin-top: 0.15rem;
+.projectTitle {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  word-spacing: 0.2rem;
 }
 
 .empty {
@@ -77,8 +73,21 @@
   text-decoration: underline;
 }
 
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  padding: 24px 0 0 0;
+  gap: 16px;
+}
+
+/* Row pattern: wide, narrow, narrow, wide, wide, narrow... */
+.projectCard:nth-child(4n+1) { grid-column: span 14; }  /* wide */
+.projectCard:nth-child(4n+2) { grid-column: span 10; }  /* narrow */
+.projectCard:nth-child(4n+3) { grid-column: span 10; }  /* narrow */
+.projectCard:nth-child(4n+4) { grid-column: span 14; }  /* wide */
+
 @media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .projectCard:nth-child(n) {
+    grid-column: span 24;
   }
 }
