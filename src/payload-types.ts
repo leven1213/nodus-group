@@ -141,6 +141,7 @@ export interface Page {
   secondaryHeadline?: string | null;
   secondaryImage?: (number | null) | Media;
   secondaryParagraph?: string | null;
+  contactImage?: (number | null) | Media;
   /**
    * Large lead text (e.g. "From the first concept...")
    */
@@ -403,6 +404,7 @@ export interface PagesSelect<T extends boolean = true> {
   secondaryHeadline?: T;
   secondaryImage?: T;
   secondaryParagraph?: T;
+  contactImage?: T;
   aboutHeadline?: T;
   aboutImage?: T;
   aboutBody?: T;

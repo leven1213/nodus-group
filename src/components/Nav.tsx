@@ -150,14 +150,6 @@ export default function Nav() {
               >
                 LinkedIn
               </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.overlaySocialLink}
-              >
-                Instagram
-              </a>
             </div>
           </div>
         </div>

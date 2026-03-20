@@ -69,6 +69,16 @@ export const Pages: CollectionConfig = {
         condition: (data) => data.slug === 'home',
       },
     },
+    // Contact page
+    {
+      name: 'contactImage',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Contact Page Image',
+      admin: {
+        condition: (data) => data?.slug === 'contact',
+      },
+    },
     // About page fields
     {
       name: 'aboutHeadline',

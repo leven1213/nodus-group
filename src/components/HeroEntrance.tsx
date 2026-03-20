@@ -69,12 +69,14 @@ export default function HeroEntrance() {
       })
 
       // Everything else — fade up
-      section.querySelectorAll('p, a.btn, a, button, [data-reveal]').forEach((el) => {
-        const element = el as HTMLElement
-        element.style.opacity = '0'
-        element.style.transform = 'translateY(20px)'
-        fadeEls.push(element)
-      })
+      section
+        .querySelectorAll('p, a.btn, a, button, span, label, input, [data-reveal]')
+        .forEach((el) => {
+          const element = el as HTMLElement
+          element.style.opacity = '0'
+          element.style.transform = 'translateY(20px)'
+          fadeEls.push(element)
+        })
     })
 
     // ── Intersection Observer ──

@@ -201,7 +201,7 @@ a.logo:hover {
 
 .overlayContactLink {
   font-size: var(--font-size-body);
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-mid-gray);
   transition: color 0.2s ease;
 }
 
@@ -217,8 +217,8 @@ a.logo:hover {
 .overlaySocialLink {
   font-size: var(--font-size-meta);
   letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase; 
+  color: var(--color-mid-gray);
   transition: color 0.2s ease;
 }
 

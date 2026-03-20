@@ -17,7 +17,7 @@ export default function Footer() {
       <div className={styles.main}>
         <div className={styles.inner}>
           <div className={styles.logoCol}>
-            <Link data-reveal href="/" className={styles.logo}>
+            <Link href="/" className={styles.logo}>
               <Image
                 src="/logos/Nodus_Logo_Mark_White.svg"
                 alt="Nodus Group Logo Mark White"
@@ -28,7 +28,20 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className={styles.col}>
+          <div className={`${styles.col} ${styles.contact}`}>
+            <p className={styles.colLabel}>Contact</p>
+            <div className={styles.contactInfo}>
+              <p>Nodus Group</p>
+              <p>1/439 Canterbury Road</p>
+              <p>Surrey Hills, VIC 3127</p>
+              <br />
+              <p>03 9999 7418</p>
+              <p>admin@nodusgroup.com.au</p>
+              <p>ABN 63 665 903 506</p>
+            </div>
+          </div>
+
+          <div className={`${styles.col} ${styles.sitemap}`}>
             <p className={styles.colLabel}>Sitemap</p>
             <nav className={styles.colLinks}>
               <Link href="/">Home</Link>
@@ -38,7 +51,7 @@ export default function Footer() {
             </nav>
           </div>
 
-          <div className={styles.col}>
+          <div className={`${styles.col} ${styles.socials}`}>
             <p className={styles.colLabel}>Socials</p>
             <nav className={styles.colLinks}>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
@@ -46,27 +59,13 @@ export default function Footer() {
               </a>
             </nav>
           </div>
-
-          <div className={styles.col}>
-            <p className={styles.colLabel}>Contact</p>
-            <div className={styles.contactInfo}>
-              <p>Nodus Group</p>
-              <p>1/439 Canterbury Road</p>
-              <p>Surrey Hills, VIC 3127</p>
-              <br />
-              <p>03 9999 7418</p>
-              <p>admin@nodusgroup.com.au</p>
-              <br />
-              <p>ABN 63 665 903 506</p>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Bottom bar */}
       <div className={styles.bottomBar}>
         <span>© Nodus Group 2026</span>
-        <Link href="/privacy">Privacy Policy</Link>
+        <Link href="/">Privacy Policy</Link>
       </div>
     </footer>
   )

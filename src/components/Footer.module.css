@@ -1,55 +1,70 @@
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100svh;
   background: var(--color-dark);
   color: var(--color-white);
-  margin-top: clamp(3rem, 6vw, 5rem);
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ── CTA Bar ── */
 .ctaBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: var(--gap);
   padding: 1.25rem var(--gutter);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   max-width: var(--max-width);
+  width: 100%;
   margin: 0 auto;
+  border-bottom: 1px solid var(--color-mid-gray);
 }
 
 .ctaBarBrand {
+  grid-column: 1 / 8;
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-mid-gray);
+  align-self: center;
 }
 
 .ctaBarLink {
+  grid-column: 20 / -1;
   font-size: 0.8rem;
   color: var(--color-white);
+  justify-self: end;
+  align-self: center;
   transition: opacity 0.2s ease;
 }
 
-.ctaBarLink:hover { opacity: 0.7; }
+.ctaBarLink:hover {
+  opacity: 0.7;
+}
 
+/* ── Main ── */
 .main {
-  padding: 5rem var(--gutter) 4rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--gutter);
 }
 
 .inner {
   max-width: var(--max-width);
+  width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 2fr;
-  gap: 3rem;
+  grid-template-columns: repeat(24, 1fr);
+  gap: var(--gap);
+  align-items: start;
 }
 
 .logoCol {
+  grid-column: 1 / 7;
   display: flex;
   align-items: flex-start;
-}
-
-.logoText {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--color-white);
 }
 
 .col {
@@ -58,11 +73,22 @@
   gap: 1rem;
 }
 
+.contact {
+  grid-column: 8 / 13;
+}
+.sitemap {
+  grid-column: 14 / 18;
+}
+.socials {
+  grid-column: 19 / 25;
+}
+
 .colLabel {
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-light-gray);
 }
 
 .colLinks {
@@ -73,46 +99,126 @@
 
 .colLinks a {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-white);
   transition: color 0.2s ease;
 }
 
-.colLinks a:hover { color: var(--color-white); }
+.colLinks a:hover {
+  color: var(--color-white);
+}
 
 .contactInfo {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-white);
   line-height: 1.7;
 }
 
+.contactInfo p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* ── Bottom Bar ── */
 .bottomBar {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: var(--gap);
   max-width: var(--max-width);
+  width: 100%;
   margin: 0 auto;
   padding: 1.25rem var(--gutter);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  justify-content: space-between;
+  border-top: 0.5px solid var(--color-mid-gray);
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-mid-gray);
+}
+
+.bottomBar span {
+  grid-column: 1 / 8;
+  align-self: center;
 }
 
 .bottomBar a {
-  color: rgba(255, 255, 255, 0.35);
+  grid-column: 20 / -1;
+  justify-self: end;
+  align-self: center;
+  color: var(--color-mid-gray);
   transition: color 0.2s ease;
 }
 
-.bottomBar a:hover { color: rgba(255, 255, 255, 0.7); }
-
-@media (max-width: 1024px) {
-  .inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-  }
-
-  .logoCol { grid-column: 1 / -1; }
+.bottomBar a:hover {
+  color: var(--color-white);
 }
 
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .logoCol {
+    grid-column: 1 / 4;
+  }
+  .contact {
+    grid-column: 4 / 8;
+  }
+  .sitemap {
+    grid-column: 8 / 10;
+  }
+  .socials {
+    grid-column: 11 / 12;
+  }
+
+  .ctaBar,
+  .bottomBar {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .ctaBarBrand {
+    grid-column: 1 / 6;
+  }
+  .ctaBarLink {
+    grid-column: 10 / -1;
+  }
+  .bottomBar span {
+    grid-column: 1 / 6;
+  }
+  .bottomBar a {
+    grid-column: 10 / -1;
+  }
+}
+
+/* ── Mobile ── */
 @media (max-width: 640px) {
-  .inner { grid-template-columns: 1fr; }
-  .main { padding: 3rem var(--gutter); }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-decoration: none;
+  }
+
+  .logoCol,
+  .sitemap,
+  .socials,
+  .contact {
+    grid-column: 1 / -1;
+  }
+
+  .ctaBar,
+  .bottomBar {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .ctaBarBrand,
+  .bottomBar span {
+    grid-column: 1 / 2;
+  }
+  .ctaBarLink,
+  .bottomBar a {
+    grid-column: 2 / 3;
+  }
+
+  .main {
+    padding: 2rem var(--gutter);
+    align-items: flex-start;
+  }
 }

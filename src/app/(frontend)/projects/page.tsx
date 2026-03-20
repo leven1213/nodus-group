@@ -18,9 +18,8 @@ export default async function ProjectsPage() {
   return (
     <>
       <HeroEntrance />
-
       <div className="pageHeading">
-        <div data-section className={`grid ${styles.heroHeader}`}>
+        <div data-section className="grid">
           <h1 className="heroTitle">Projects</h1>
         </div>
       </div>

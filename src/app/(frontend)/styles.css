@@ -12,7 +12,7 @@
   --color-white: #ffffff;
   --color-off-white: #f8f7f5;
   --color-light-gray: #d1d0d0;
-  --color-mid-gray: #9a9690;
+  --color-mid-gray: #8C8A85;
   --color-text: #1a1814;
 
   --font-display: 'Sora', sans-serif;
@@ -54,7 +54,7 @@
   :root {
     --columns: 24;
     --gutter: 24px;
-    --nav-height: calc(56px + 48px); 
+    --nav-height: calc(56px + 48px);
   }
 }
 
@@ -89,7 +89,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    background-image: linear-gradient(#1a1814, #1a1814);
+    background-image: linear-gradient(currentColor, currentColor);
     background-size: 100% 1px;
     background-repeat: no-repeat;
     background-position: left bottom;
@@ -99,19 +99,21 @@ a {
 
 /* ── Page layout — shared across all inner pages ── */
 .pageHeading {
+  font-family: var(--font-display);
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: clamp(8rem, 15vw, 12.5rem) 0 0;
+  padding: clamp(8rem, 12vw, 10.5rem) 0 0;
 }
 
 .pageSection {
-  padding: 0 var(--gutter); 
+  padding: 0 var(--gutter);
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
 .heroTitle {
-  line-height: 1.05; 
+  grid-column: 1 / -1;
+  line-height: 1.05;
 }
 
 .projectLocation {
@@ -157,8 +159,8 @@ h1 {
 
 h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
   line-height: var(--line-height-heading);
   letter-spacing: var(--heading-letter-spacing);
   word-spacing: 0.25rem;
@@ -166,8 +168,9 @@ h2 {
 
 h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 470;
+  line-height: var(--line-height-heading);
   letter-spacing: -0.01em;
   word-spacing: 0.2rem;
 }
@@ -185,7 +188,8 @@ button {
   font-family: inherit;
 }
 
-a.btn {
+a.btn,
+button {
   display: inline-flex;
   align-items: center;
   width: fit-content;
@@ -266,6 +270,10 @@ a.logo:hover {
   }
   .contact {
     grid-column: 1 / -1;
+  }
+
+  h3 {
+    font-weight: 470;
   }
 }
 

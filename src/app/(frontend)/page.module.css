@@ -24,7 +24,7 @@ HERO — mobile base
   display: flex;
   flex-direction: column;
   min-height: 100svh;
-  justify-content: center; 
+  justify-content: center;
   position: relative;
   overflow: hidden;
 }
@@ -99,7 +99,7 @@ HERO — mobile base
 
   .heroParagraph {
     max-width: 50ch;
-  } 
+  }
 }
 
 /* Desktop */
@@ -110,7 +110,7 @@ HERO — mobile base
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: 1fr auto;
     gap: var(--gap);
-    padding: var(--gutter); 
+    padding: var(--gutter);
     align-content: center;
     overflow: hidden;
   }
@@ -166,7 +166,7 @@ ABOUT — mobile base
 }
 
 .aboutHeadline {
-  color: var(--color-black); 
+  color: var(--color-black);
 }
 
 .aboutImageWrap {
@@ -192,7 +192,7 @@ ABOUT — mobile base
 
   .aboutHeadline {
     grid-column: 1 / 12;
-    grid-row: 1 / 3;  
+    grid-row: 1 / 3;
   }
 
   .aboutImageWrap {
@@ -230,8 +230,10 @@ FEATURED PROJECTS — mobile base
   grid-template-columns: repeat(24, 1fr);
 }
 
-.projectsTitle {  
+.projectsTitle {
   grid-column: 1 / 16;
+  line-height: 0.8;  
+  padding-bottom: 0;  
 }
 
 .projectsHeader .btnWrap {
@@ -243,20 +245,15 @@ FEATURED PROJECTS — mobile base
 
 .featuredProject {
   color: var(--color-text-muted);
-  padding-top: clamp(2rem, 4vw, 3rem) 0;
-  padding-bottom: clamp(0rem, 4vw, 3rem) 0;
-}
-
-.featuredImageWrap {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
-  background: var(--color-light-gray);
-  width: 100%;
 }
 
 .featuredInfo {
-  grid-column: 1 / 16;
+  grid-column: 1 / 8;
+}
+
+.featuredDesc {
+  padding-top: clamp(1.5rem, 4vw, 2.5rem);
+  padding-bottom: clamp(1.5rem, 4vw, 3rem);
 }
 
 .featuredLocation {
@@ -267,9 +264,12 @@ FEATURED PROJECTS — mobile base
   margin-top: 0.5rem;
 }
 
-.featuredDesc {
-  color: var(--color-text-muted);
-  margin: 1.5rem 0;
+.featuredImageWrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: var(--color-light-gray);
+  width: 100%;
 }
 
 /* Tablet */
@@ -301,10 +301,6 @@ FEATURED PROJECTS — mobile base
     grid-template-columns: repeat(24, 1fr);
     gap: var(--gap);
     align-items: start;
-  }
-
-  .featuredInfo {
-    grid-column: 1 / 8;
   }
 
   .featuredImageWrap {

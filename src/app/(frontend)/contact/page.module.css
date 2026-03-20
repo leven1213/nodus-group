@@ -1,15 +1,3 @@
-.page {
-  max-width: 1512px;
-  margin: 0 auto; 
-}
-
-.pageTitle {
-  font-family: var(--font-display); 
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  margin-bottom: 2rem;
-}
-
 .formSection {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -25,46 +13,37 @@
 }
 
 .introText {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.2vw, 2rem);
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 500;
+  line-height: var(--line-height-heading);
   letter-spacing: -0.01em;
-  color: var(--color-black);
-}
-
-.introSub {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-  font-weight: 400;
-  font-style: italic;
-  color: var(--color-text-muted);
-  line-height: 1.2;
+  word-spacing: 0.2rem;
+  padding-bottom: clamp(1rem, 3vw, 2.5rem);
 }
 
 .formWrap {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: clamp(0.7rem, 1vw, 0.8rem);
 }
 
 .formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: clamp(0.85rem, 1vw, 0.8rem)
 }
 
 .field {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: clamp(0.85rem, 1vw, 0.8rem);
 }
 
 .label {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -73,9 +52,8 @@
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--color-light-gray);
-  padding: 0.6rem 0;
+  padding: 0.6rem 0; 
   font-family: var(--font-body);
-  font-size: 0.9rem;
   color: var(--color-black);
   background: transparent;
   outline: none;
@@ -96,22 +74,20 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
-  padding-top: 1rem;
+  gap: 1rem; 
 }
 
 .submitBtn {
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.55rem 1.2rem;
-  border: 1px solid var(--color-black);
-  border-radius: 100px;
-  color: var(--color-black);
+  color: var(--color-text-muted);
   background: transparent;
-  font-family: var(--font-body);
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .submitBtn:hover:not(:disabled) {
@@ -124,8 +100,25 @@
   cursor: not-allowed;
 }
 
-.successMsg { font-size: 0.8rem; color: #2d6a4f; }
-.errorMsg { font-size: 0.8rem; color: #c1121f; }
+.successMsg {
+  font-size: 0.75rem;
+  color: #2d6a4f;
+}
+
+.fieldError {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #d2422f;
+  background-color: #fff7f6;
+  padding: 0.5rem 0.75rem;
+  margin-top: clamp(0rem, 1vw, 0.4rem); 
+}
+
+.errorMsg {
+  font-size: 0.75rem;
+  color: #d2422f;
+}
 
 .divider {
   height: 1px;
@@ -138,7 +131,6 @@
 }
 
 .contactDetails {
-  padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem) 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -180,11 +172,19 @@
 }
 
 @media (max-width: 1024px) {
-  .formSection { grid-template-columns: 1fr; }
-  .contactInfo { grid-template-columns: 1fr; }
-  .contactImageWrap { aspect-ratio: 16 / 9; }
+  .formSection {
+    grid-template-columns: 1fr;
+  }
+  .contactInfo {
+    grid-template-columns: 1fr;
+  }
+  .contactImageWrap {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 @media (max-width: 640px) {
-  .formRow { grid-template-columns: 1fr; }
+  .formRow {
+    grid-template-columns: 1fr;
+  }
 }

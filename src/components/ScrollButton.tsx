@@ -16,8 +16,8 @@ export default function ScrollButton() {
         <Image
           src="/icons/Nodus-Group_Arrow_Downward.svg"
           alt="Arrow button"
-          width={30}
-          height={30}
+          width={40}
+          height={40}
         />
       </button>
     </>

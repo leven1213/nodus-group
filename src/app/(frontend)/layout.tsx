@@ -16,8 +16,17 @@ export default async function FrontendLayout(props: { children: React.ReactNode 
     <html lang="en">
       <body>
         <Nav />
-        <main>{children}</main>
         <Footer />
+        <main
+          style={{
+            position: 'relative',
+            zIndex: 1,
+            background: 'var(--color-white)',
+            marginBottom: '100svh',
+          }}
+        >
+          {children}
+        </main>
       </body>
     </html>
   )
