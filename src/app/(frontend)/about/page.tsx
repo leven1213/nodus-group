@@ -5,6 +5,8 @@ import styles from './page.module.css'
 
 import HeroEntrance from '@/components/HeroEntrance'
 
+export const dynamic = 'force-dynamic'
+
 export default async function AboutPage() {
   const payload = await getPayload({ config: await config })
 
