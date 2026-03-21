@@ -9,6 +9,8 @@
   z-index: 0;
   display: flex;
   flex-direction: column;
+  padding-top: 68px;
+  box-sizing: border-box;
 }
 
 /* ── CTA Bar ── */
@@ -94,6 +96,7 @@
 .colLinks {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.5rem;
 }
 
@@ -107,6 +110,11 @@
   color: var(--color-white);
 }
 
+.colLinks a,
+.contactInfo a {
+  display: inline;
+}
+
 .contactInfo {
   font-size: 0.875rem;
   color: var(--color-white);
@@ -116,6 +124,12 @@
 .contactInfo p {
   font-size: 0.875rem;
   line-height: 1.7;
+}
+
+.contactInfo a,
+.contactInfo p {
+  color: var(--color-white);
+  text-decoration: none;
 }
 
 /* ── Bottom Bar ── */

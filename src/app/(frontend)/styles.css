@@ -12,7 +12,7 @@
   --color-white: #ffffff;
   --color-off-white: #f8f7f5;
   --color-light-gray: #d1d0d0;
-  --color-mid-gray: #8C8A85;
+  --color-mid-gray: #8c8a85;
   --color-text: #1a1814;
 
   --font-display: 'Sora', sans-serif;
@@ -33,6 +33,7 @@
 
   /* ── Layout ── */
   --max-width: 1512px;
+  --nav-bar-height: 68px;
   --nav-height: 68px;
   --columns: 4;
   --gap: 16px;
@@ -45,6 +46,7 @@
   :root {
     --columns: 12;
     --gutter: 24px;
+    --nav-bar-height: 72px;
     --nav-height: 72px;
   }
 }
@@ -54,6 +56,7 @@
   :root {
     --columns: 24;
     --gutter: 24px;
+    --nav-bar-height: 56px; 
     --nav-height: calc(56px + 48px);
   }
 }

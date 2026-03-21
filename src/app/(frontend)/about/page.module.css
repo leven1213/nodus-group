@@ -19,6 +19,8 @@
 }
 
 .imageWrap {
+  position: relative;
+  overflow: hidden;
   grid-column: 1 / -1;
   aspect-ratio: 4 / 3;
 }

@@ -35,8 +35,8 @@ export default function Footer() {
               <p>1/439 Canterbury Road</p>
               <p>Surrey Hills, VIC 3127</p>
               <br />
-              <p>03 9999 7418</p>
-              <p>admin@nodusgroup.com.au</p>
+              <a href="tel:0399997418">03 9999 7418</a>
+              <a href="mailto:admin@nodusgroup.com.au">admin@nodusgroup.com.au</a>
               <p>ABN 63 665 903 506</p>
             </div>
           </div>
