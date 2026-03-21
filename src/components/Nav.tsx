@@ -137,6 +137,7 @@ export default function Nav() {
               <a href="mailto:admin@nodusgroup.com.au" className={styles.overlayContactLink}>
                 admin@nodusgroup.com.au
               </a>
+              <br />
               <a href="tel:0399997418" className={styles.overlayContactLink}>
                 03 9999 7418
               </a>

@@ -34,7 +34,7 @@ export default async function AboutPage() {
         <div className={styles.aboutInner}>
           <h2 className={styles.leadStatement}>
             {page?.aboutHeadline ||
-              'Up to the final finish, Nodus is detail-obsessed about each project we take on.'}
+              'Up to the final finish, Nodus is detail-obsessed about each project.'}
           </h2>
           <div className={styles.bodyText}>
             {page?.aboutBody ? (
@@ -43,8 +43,8 @@ export default async function AboutPage() {
             ) : (
               <>
                 <p>
-                  Great workplaces don’t happen by accident. They’re the result of intentional
-                  design and construction by a team that cares about the outcome.
+                  We believe that great workplaces don’t happen by accident. They’re the result of
+                  intentional design and construction by a team that cares about the outcome.
                 </p>
                 <p>
                   We’re locals. We know Melbourne’s commercial landscape, and what it takes to

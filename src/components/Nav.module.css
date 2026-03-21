@@ -163,7 +163,7 @@ a.logo:hover {
   color: var(--color-white);
   line-height: 1.15;
   padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 0.5px solid var(--color-mid-gray);
   display: block;
 
   /* Slide up animation */
@@ -180,29 +180,27 @@ a.logo:hover {
   transform: translateY(0);
 }
 
-.overlayLink:hover {
-  color: rgba(255, 255, 255, 0.5);
-}
-
 /* ── Overlay Footer ── */
 .overlayFooter {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: flex-start;
+  padding-top: 0.8rem;
+  border-top: 0.5px solid var(--color-mid-gray);
 }
 
 .overlayContact {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  display: inline; 
 }
+ 
 
 .overlayContactLink {
   font-size: var(--font-size-body);
   color: var(--color-mid-gray);
-  transition: color 0.2s ease;
+  transition: color 0.2s ease; 
 }
 
 .overlayContactLink:hover {
@@ -211,15 +209,16 @@ a.logo:hover {
 
 .overlaySocials {
   display: flex;
-  gap: 1.5rem;
 }
 
 .overlaySocialLink {
   font-size: var(--font-size-meta);
-  letter-spacing: 0.1em;
-  text-transform: uppercase; 
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--color-mid-gray);
   transition: color 0.2s ease;
+  align-self: start;
 }
 
 .overlaySocialLink:hover {
@@ -243,7 +242,7 @@ a.logo:hover {
   }
 
   .nav {
-    grid-column: 8 / 13; 
+    grid-column: 8 / 13;
   }
 
   .navLink {

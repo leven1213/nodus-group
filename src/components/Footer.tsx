@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       {/* CTA bar */}
       <div className={styles.ctaBar}>
-        <span className={styles.ctaBarBrand}>Nodus Group</span>
+        <span className={styles.ctaBarBrand}>Let’s touch base</span>
         <Link href="/contact" className={styles.ctaBarLink}>
           Contact →
         </Link>
@@ -34,9 +34,11 @@ export default function Footer() {
               <p>Nodus Group</p>
               <p>1/439 Canterbury Road</p>
               <p>Surrey Hills, VIC 3127</p>
+
               <br />
-              <a href="tel:0399997418">03 9999 7418</a>
-              <a href="mailto:admin@nodusgroup.com.au">admin@nodusgroup.com.au</a>
+              <Link href="tel:0399997418">03 9999 7418</Link>
+              <br />
+              <Link href="mailto:admin@nodusgroup.com.au">admin@nodusgroup.com.au</Link>
               <p>ABN 63 665 903 506</p>
             </div>
           </div>

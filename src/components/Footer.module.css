@@ -22,19 +22,17 @@
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
-  border-bottom: 1px solid var(--color-mid-gray);
+  border-bottom: 0.5px solid var(--color-mid-gray);
 }
 
 .ctaBarBrand {
-  grid-column: 1 / 8;
-  font-size: 0.8rem;
+  grid-column: 1 / 8; 
   color: var(--color-mid-gray);
   align-self: center;
 }
 
 .ctaBarLink {
-  grid-column: 20 / -1;
-  font-size: 0.8rem;
+  grid-column: 20 / -1; 
   color: var(--color-white);
   justify-self: end;
   align-self: center;
@@ -86,11 +84,11 @@
 }
 
 .colLabel {
-  font-size: 0.7rem;
+  font-size: var(--font-size-meta);
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-light-gray);
+  color: var(--color-mid-gray);
 }
 
 .colLinks {
@@ -100,8 +98,7 @@
   gap: 0.5rem;
 }
 
-.colLinks a {
-  font-size: 0.875rem;
+.colLinks a { 
   color: var(--color-white);
   transition: color 0.2s ease;
 }
@@ -115,21 +112,18 @@
   display: inline;
 }
 
-.contactInfo {
-  font-size: 0.875rem;
+.contactInfo { 
   color: var(--color-white);
   line-height: 1.7;
 }
 
-.contactInfo p {
-  font-size: 0.875rem;
+.contactInfo p { 
   line-height: 1.7;
 }
 
 .contactInfo a,
 .contactInfo p {
-  color: var(--color-white);
-  text-decoration: none;
+  color: var(--color-white);  
 }
 
 /* ── Bottom Bar ── */
@@ -141,8 +135,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 1.25rem var(--gutter);
-  border-top: 0.5px solid var(--color-mid-gray);
-  font-size: 0.75rem;
+  border-top: 0.5px solid var(--color-mid-gray);  
   color: var(--color-mid-gray);
 }
 
@@ -209,11 +202,21 @@
     text-decoration: none;
   }
 
-  .logoCol,
-  .sitemap,
-  .socials,
+  
+  .logoCol {
+    grid-column: 1 / 12;
+  }
   .contact {
-    grid-column: 1 / -1;
+    grid-column: 1 / 12;
+  }
+  .sitemap {
+    grid-column: 1 / 5;
+  }
+  .socials {
+    grid-column: 11 / 12;
+    text-align: right;
+    max-width: unset;
+    align-self: start;
   }
 
   .ctaBar,
