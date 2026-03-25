@@ -103,14 +103,14 @@ a.logo:hover {
 
 /* Open state — morphs to X */
 .hamburgerOpen .lineTop {
-  transform: translateX(-3.4) translateY(4.2px) rotate(45deg);
+  transform: translateX(-3.4px) translateY(4.2px) rotate(45deg);
 }
 .hamburgerOpen .lineMid {
   opacity: 0;
   transform: scaleX(0);
 }
 .hamburgerOpen .lineBot {
-  transform: translateX(-3.4) translateY(-3px) rotate(-45deg);
+  transform: translateX(-3.4px) translateY(-3px) rotate(-45deg);
 }
 
 /* ── Overlay ── */

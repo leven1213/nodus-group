@@ -6,7 +6,7 @@
   height: 100svh;
   background: var(--color-dark);
   color: var(--color-white);
-  z-index: 0;
+  z-index: -1;
   display: flex;
   flex-direction: column;
   padding-top: 68px;
@@ -26,21 +26,17 @@
 }
 
 .ctaBarBrand {
-  grid-column: 1 / 8; 
+  grid-column: 1 / 8;
   color: var(--color-mid-gray);
   align-self: center;
 }
 
 .ctaBarLink {
-  grid-column: 20 / -1; 
+  grid-column: 20 / -1;
   color: var(--color-white);
   justify-self: end;
   align-self: center;
   transition: opacity 0.2s ease;
-}
-
-.ctaBarLink:hover {
-  opacity: 0.7;
 }
 
 /* ── Main ── */
@@ -98,7 +94,7 @@
   gap: 0.5rem;
 }
 
-.colLinks a { 
+.colLinks a {
   color: var(--color-white);
   transition: color 0.2s ease;
 }
@@ -112,18 +108,18 @@
   display: inline;
 }
 
-.contactInfo { 
+.contactInfo {
   color: var(--color-white);
   line-height: 1.7;
 }
 
-.contactInfo p { 
+.contactInfo p {
   line-height: 1.7;
 }
 
 .contactInfo a,
 .contactInfo p {
-  color: var(--color-white);  
+  color: var(--color-white);
 }
 
 /* ── Bottom Bar ── */
@@ -135,7 +131,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 1.25rem var(--gutter);
-  border-top: 0.5px solid var(--color-mid-gray);  
+  border-top: 0.5px solid var(--color-mid-gray);
   color: var(--color-mid-gray);
 }
 
@@ -196,13 +192,19 @@
 
 /* ── Mobile ── */
 @media (max-width: 640px) {
+  .footer {
+    position: relative;
+    height: auto;
+    z-index: 0;
+    padding-top: 0;
+  }
+
   .inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
     text-decoration: none;
   }
 
-  
   .logoCol {
     grid-column: 1 / 12;
   }

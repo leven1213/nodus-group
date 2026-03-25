@@ -118,7 +118,7 @@ export default async function HomePage() {
         <h2 className={styles.projectsTitle}>Featured Project</h2>
         <div className={styles.btnWrap}>
           <Link href="/projects" className="btn">
-            View Projects
+            View All
           </Link>
         </div>
       </div>

@@ -56,7 +56,7 @@
   :root {
     --columns: 24;
     --gutter: 24px;
-    --nav-bar-height: 56px; 
+    --nav-bar-height: 56px;
     --nav-height: calc(56px + 48px);
   }
 }
@@ -277,6 +277,12 @@ a.logo:hover {
 
   h3 {
     font-weight: 470;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    margin-bottom: 32px !important;
   }
 }
 
