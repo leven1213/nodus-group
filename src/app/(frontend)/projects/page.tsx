@@ -35,12 +35,7 @@ export default async function ProjectsPage() {
               const image = typeof project.coverImage === 'object' ? project.coverImage : null
 
               return (
-                <Link
-                  key={project.id}
-                  href={`/projects/${project.slug}`}
-                  data-reveal
-                  className={styles.projectCard}
-                >
+                <div key={project.id} data-reveal className={styles.projectCard}>
                   <div className={styles.imageWrap}>
                     {image?.url ? (
                       <Image
@@ -58,7 +53,7 @@ export default async function ProjectsPage() {
                     <h2 className={styles.projectTitle}>{project.title}</h2>
                     <p className="projectLocation">{project.location}</p>
                   </div>
-                </Link>
+                </div>
               )
             })}
           </div>

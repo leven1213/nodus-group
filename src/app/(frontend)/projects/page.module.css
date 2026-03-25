@@ -10,8 +10,7 @@
 .projectCard {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  cursor: pointer;
+  gap: 1.5rem; 
   padding-bottom: 2rem;
   text-decoration: none;
 }

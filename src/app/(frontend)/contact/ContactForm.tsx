@@ -222,14 +222,14 @@ export default function ContactForm({ contactImageUrl, contactImageAlt }: Props)
         <div className={styles.contactDetails}>
           <div className={styles.contactGroup}>
             <p className={styles.contactLabel}>Reach Us</p>
-            <p className={styles.contactText}>03 9999 7418</p>
-            <p className={styles.contactText}>admin@nodusgroup.com.au</p>
+            <h3>03 9999 7418</h3>
+            <h3>admin@nodusgroup.com.au</h3>
           </div>
           <div className={styles.contactGroup}>
             <p className={styles.contactLabel}>Visit Us</p>
-            <p className={styles.contactText}>Nodus Group</p>
-            <p className={styles.contactText}>1/439 Canterbury Road</p>
-            <p className={styles.contactText}>Surrey Hills, VIC 3127</p>
+            <h3>Nodus Group</h3>
+            <h3>1/439 Canterbury Road</h3>
+            <h3>Surrey Hills, VIC 3127</h3>
           </div>
         </div>
         <div className={styles.contactImageWrap}>

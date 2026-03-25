@@ -30,7 +30,7 @@
 .formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(0.85rem, 1vw, 0.8rem)
+  gap: clamp(0.85rem, 1vw, 0.8rem);
 }
 
 .field {
@@ -52,8 +52,9 @@
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--color-light-gray);
-  padding: 0.6rem 0; 
+  padding: 0.6rem 0;
   font-family: var(--font-body);
+  font-size: var(--font-size-body);
   color: var(--color-black);
   background: transparent;
   outline: none;
@@ -74,7 +75,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem; 
+  gap: 1rem;
 }
 
 .submitBtn {
@@ -112,7 +113,7 @@
   color: #d2422f;
   background-color: #fff7f6;
   padding: 0.5rem 0.75rem;
-  margin-top: clamp(0rem, 1vw, 0.4rem); 
+  margin-top: clamp(0rem, 1vw, 0.4rem);
 }
 
 .errorMsg {
@@ -152,8 +153,8 @@
 
 .contactText {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 400;
+  font-size: clamp(1.15rem, 1.5vw, 1.25rem);
+  font-weight: 500;
   color: var(--color-black);
   line-height: 1.4;
 }
@@ -179,11 +180,15 @@
     grid-template-columns: 1fr;
   }
   .contactImageWrap {
+    margin-top: 24px;
     aspect-ratio: 16 / 9;
   }
 }
 
 @media (max-width: 640px) {
+  .contactImageWrap { 
+    aspect-ratio: 16 / 9;
+  }
   .formRow {
     grid-template-columns: 1fr;
   }
