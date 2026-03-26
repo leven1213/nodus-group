@@ -206,18 +206,16 @@
   }
 
   .logoCol {
-    grid-column: 1 / 12;
+    grid-column: 1 / 8;
   }
   .contact {
-    grid-column: 1 / 12;
+    grid-column: 1 / 8;
   }
   .sitemap {
-    grid-column: 1 / 5;
+    grid-column: 1 / 8;
   }
   .socials {
-    grid-column: 11 / 12;
-    text-align: right;
-    max-width: unset;
+    grid-column: 1 / 8; 
     align-self: start;
   }
 
