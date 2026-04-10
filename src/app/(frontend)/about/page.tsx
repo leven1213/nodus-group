@@ -43,13 +43,15 @@ export default async function AboutPage() {
             ) : (
               <>
                 <p>
-                  We believe that great workplaces don’t happen by accident. They’re the result of
-                  intentional design and construction by a team that cares about the outcome.
+                  We believe that great workplaces don&rsquo;t happen by accident. They&rsquo;re the
+                  result of intentional design and construction by a team that cares about the
+                  outcome.
                 </p>
                 <p>
-                  We’re locals. We know Melbourne’s commercial landscape, and what it takes to
-                  create spaces that work as hard as the people in them. So if you’re starting fresh
-                  or reimagining an existing space, we’re here to make it happen.
+                  We&rsquo;re locals. We know Melbourne&rsquo;s commercial landscape, and what it
+                  takes to create spaces that work as hard as the people in them. So if you&rsquo;re
+                  starting fresh or reimagining an existing space, we&rsquo;re here to make it
+                  happen.
                 </p>
               </>
             )}

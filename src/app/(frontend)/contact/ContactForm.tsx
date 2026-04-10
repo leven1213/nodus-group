@@ -74,7 +74,6 @@ export default function ContactForm({ contactImageUrl, contactImageAlt }: Props)
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
-
       if (res.ok) {
         setStatus('success')
         setFormData({ firstName: '', lastName: '', company: '', email: '', phone: '', message: '' })
@@ -93,7 +92,7 @@ export default function ContactForm({ contactImageUrl, contactImageAlt }: Props)
               `Phone: ${formData.phone || '—'}\n\n` +
               `Message:\n${formData.message}`,
           )
-          window.location.href = `mailto:hi.leven@outlook.com?subject=${subject}&body=${body}`
+          window.location.href = `mailto:contact@nodusbuild.com.au?subject=${subject}&body=${body}`
         }, 1500)
       } else {
         setStatus('error')
@@ -109,7 +108,7 @@ export default function ContactForm({ contactImageUrl, contactImageAlt }: Props)
       <section data-section className={`grid ${styles.formSection}`}>
         <div className={styles.intro}>
           <h2 className={styles.introText}>
-            We’re passionate about getting fitouts right. Let’s talk about yours.
+            We&rsquo;re passionate about getting fitouts right. Let&rsquo;s talk about yours.
           </h2>
         </div>
 
@@ -199,7 +198,10 @@ export default function ContactForm({ contactImageUrl, contactImageAlt }: Props)
 
           <div className={styles.submitRow}>
             {status === 'success' && (
-              <p className={styles.successMsg}>Thanks! Opening your email client…</p>
+              <p className={styles.successMsg}>
+                We&rsquo;ve received your message and will be in touch within 1&ndash;2 business
+                days.
+              </p>
             )}
             {status === 'error' && (
               <p className={styles.errorMsg}>Something went wrong. Please try again.</p>
@@ -223,11 +225,11 @@ export default function ContactForm({ contactImageUrl, contactImageAlt }: Props)
           <div className={styles.contactGroup}>
             <p className={styles.contactLabel}>Reach Us</p>
             <h3>03 9999 7418</h3>
-            <h3>admin@nodusgroup.com.au</h3>
+            <h3>contact@nodusbuild.com.au</h3>
           </div>
           <div className={styles.contactGroup}>
             <p className={styles.contactLabel}>Visit Us</p>
-            <h3>Nodus Group</h3>
+            <h3>Nodus Build</h3>
             <h3>1/439 Canterbury Road</h3>
             <h3>Surrey Hills, VIC 3127</h3>
           </div>

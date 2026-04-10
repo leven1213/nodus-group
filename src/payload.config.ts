@@ -16,7 +16,7 @@ export default buildConfig({
   admin: {
     user: 'users',
     meta: {
-      titleSuffix: '— Nodus Admin',
+      titleSuffix: '— Nodus Build Admin',
     },
   },
 

@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       {/* CTA bar */}
       <div className={styles.ctaBar}>
-        <span className={styles.ctaBarBrand}>Let’s touch base</span>
+        <span className={styles.ctaBarBrand}>Let&rsquo;s touch base</span>
         <Link href="/contact" className={styles.ctaBarLink}>
           Contact →
         </Link>
@@ -20,7 +20,7 @@ export default function Footer() {
             <Link href="/" className={styles.logo}>
               <Image
                 src="/logos/Nodus_Logo_Mark_White.svg"
-                alt="Nodus Group Logo Mark White"
+                alt="Nodus Build Logo Mark White"
                 width={120}
                 height={32}
                 priority
@@ -31,14 +31,14 @@ export default function Footer() {
           <div className={`${styles.col} ${styles.contact}`}>
             <p className={styles.colLabel}>Contact</p>
             <div className={styles.contactInfo}>
-              <p>Nodus Group</p>
+              <p>Nodus Build</p>
               <p>1/439 Canterbury Road</p>
               <p>Surrey Hills, VIC 3127</p>
 
               <br />
               <Link href="tel:0399997418">03 9999 7418</Link>
               <br />
-              <Link href="mailto:admin@nodusgroup.com.au">admin@nodusgroup.com.au</Link>
+              <Link href="mailto:contact@nodusbuild.com.au">contact@nodusbuild.com.au</Link>
               <p>ABN 63 665 903 506</p>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className={styles.bottomBar}>
-        <span>© Nodus Group 2026</span>
+        <span>© Nodus Build 2026</span>
         <Link href="/">Privacy Policy</Link>
       </div>
     </footer>

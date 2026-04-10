@@ -134,8 +134,8 @@ export default function Nav() {
 
           <div className={styles.overlayFooter}>
             <div className={styles.overlayContact}>
-              <a href="mailto:admin@nodusgroup.com.au" className={styles.overlayContactLink}>
-                admin@nodusgroup.com.au
+              <a href="mailto:contact@nodusbuild.com.au" className={styles.overlayContactLink}>
+                contact@nodusbuild.com.au
               </a>
               <br />
               <a href="tel:0399997418" className={styles.overlayContactLink}>

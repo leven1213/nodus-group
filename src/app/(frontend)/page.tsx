@@ -63,7 +63,7 @@ export default async function HomePage() {
           </h1>
           <p className={styles.heroParagraph}>
             {page?.heroParagraph ||
-              'Every office tells a story about the business inside it. Nodus Group designs and delivers fitouts built to perform from day one, and built to last.'}
+              'Every office tells a story about the business inside it. Nodus Build designs and delivers fitouts built to perform from day one, and built to last.'}
           </p>
         </div>
         <div data-section className={styles.btnWrap}>

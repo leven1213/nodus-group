@@ -4,9 +4,9 @@ import Footer from '@/components/Footer'
 import './styles.css'
 
 export const metadata = {
-  title: 'Nodus Group — Commercial Fitouts Melbourne',
+  title: 'Nodus Build — Commercial Fitouts in Melbourne',
   description:
-    'Nodus Group designs and delivers fitouts built to perform from day one, and built to last.',
+    'Nodus Build designs and delivers fitouts built to perform from day one, and built to last.',
 }
 
 export default async function FrontendLayout(props: { children: React.ReactNode }) {

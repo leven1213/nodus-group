@@ -10,7 +10,7 @@ export const Globals: GlobalConfig = {
     {
       name: 'companyName',
       type: 'text',
-      defaultValue: 'Nodus Group',
+      defaultValue: 'Nodus Build',
     },
     {
       name: 'phone',
@@ -20,7 +20,7 @@ export const Globals: GlobalConfig = {
     {
       name: 'email',
       type: 'email',
-      defaultValue: 'admin@nodusgroup.com.au',
+      defaultValue: 'contact@nodusbuild.com.au',
     },
     {
       name: 'address',
