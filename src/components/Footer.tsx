@@ -39,7 +39,7 @@ export default function Footer() {
               <Link href="tel:0399997418">03 9999 7418</Link>
               <br />
               <Link href="mailto:contact@nodusbuild.com.au">contact@nodusbuild.com.au</Link>
-              <p>ABN 63 665 903 506</p>
+              <p>ABN 72 695 537 850</p>
             </div>
           </div>
 
